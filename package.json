@@ -1,0 +1,39 @@
+{
+  "name": "chatbot-rogers",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Example Rogerian chatbot using Microsoft's Bot Framework and IBM Watson's NLU",
+  "main": "./dist/app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/szul/chatbot-rogers.git"
+  },
+  "keywords": [
+    "chatbots",
+    "bot framework",
+    "bot builder",
+    "bot builder community",
+    "ibm watson",
+    "natural language understanding",
+    "nlu"
+  ],
+  "author": "Michael Szul <michael@szul.us>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/szul/chatbot-rogers/issues"
+  },
+  "homepage": "https://github.com/szul/chatbot-rogers#readme",
+  "dependencies": {
+    "@botbuildercommunity/middleware-watson-nlu": "^1.0.1",
+    "botbuilder": "^4.5.3",
+    "dotenv": "^8.1.0",
+    "restify": "^8.4.0"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^6.1.1",
+    "@types/restify": "^8.4.0"
+  }
+}
