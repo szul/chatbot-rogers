@@ -1,27 +1,36 @@
-import { BotFrameworkAdapter } from "botbuilder";
+import { BotFrameworkAdapter, TurnContext, MemoryStorage, ConversationState } from "botbuilder";
+import { DialogSet } from "botbuilder-dialogs";
 import * as restify from "restify";
 import { EmotionDetection } from "@botbuildercommunity/middleware-watson-nlu";
 import { config } from "dotenv";
-import { topEmotion, topEmotionResult } from "./util";
+import { RogersBot } from "./bot";
 
 config();
 
-const server = restify.createServer();
+const server: restify.Server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 3978, function () {
     console.log(`${server.name} listening to ${server.url}`);
 });
 
-const adapter = new BotFrameworkAdapter({ 
+const adapter: BotFrameworkAdapter = new BotFrameworkAdapter({ 
     appId: process.env.MICROSOFT_APP_ID, 
     appPassword: process.env.MICROSOFT_APP_PASSWORD 
 });
 
+adapter.onTurnError = async (context: TurnContext, error: Error): Promise<void> => {
+    console.error(`Sorry, an error has occurred: ${error}`);
+    context.sendActivity("Sorry, an error has occurred.");
+};
+
 adapter.use(new EmotionDetection(process.env.WATSON_API_KEY, process.env.WATSON_ENDPOINT));
 
-server.post("/api/messages", (req, res) => {
-    adapter.processActivity(req, res, async (context) => {
-        if (context.activity.type === "message") {
-            await context.sendActivity(`You said "${context.activity.text} with an emotion score of [joy] at ${context.turnState.get("emotionDetection").joy}"`);
-        }
+const conversationState: ConversationState = new ConversationState(new MemoryStorage());
+const dialogs: DialogSet = new DialogSet(conversationState.createProperty("dialogState"));
+
+const rogers: RogersBot = new RogersBot(conversationState, dialogs);
+
+server.post("/api/messages", (req: restify.Request, res: restify.Response): void => {
+    adapter.processActivity(req, res, async (context: TurnContext): Promise<void> => {
+        await rogers.onTurn(context);
     });
 });
