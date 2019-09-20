@@ -1,7 +1,7 @@
 import { TurnContext, ActivityTypes, ConversationState } from "botbuilder";
 import { DialogSet, DialogContext, WaterfallDialog, WaterfallStepContext, TextPrompt } from "botbuilder-dialogs";
 import { topEmotionScore } from "./util";
-import { EmotionScore } from "./schema";
+import { Emotion } from "./schema";
 
 export class RogersBot {
     public state: ConversationState;
@@ -30,9 +30,9 @@ export class RogersBot {
                 return await step.prompt("textPrompt", "Hello. How are you doing today?");
             },
             async (step: WaterfallStepContext) => {
-                const emotion: EmotionScore = step.context.turnState.get("emotionDetection");
-                const emotionScore: EmotionScore = topEmotionScore(emotion);
-                switch(emotionScore.name) {
+                const emotionScores: nlup.EmotionScores = step.context.turnState.get("emotionDetection");
+                const emotion: Emotion = topEmotionScore(emotionScores);
+                switch(emotion.name) {
                     default:
                         break;
                 }
