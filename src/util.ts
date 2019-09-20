@@ -1,5 +1,5 @@
 import * as nlup from 'ibm-watson/natural-language-understanding/v1.js';
-import { EmotionScore } from "./schema";
+import { Emotion } from "./schema";
 
 export function getEmotions(result: nlup.EntitiesResult | nlup.KeywordsResult): nlup.EmotionScores {
     if(result.emotion !== undefined) {
@@ -12,7 +12,10 @@ export function topEmotion(emotionScores: nlup.EmotionScores): string {
     return sortedEmotions[0];
 }
 
-export function topEmotionScore(emotionResult: nlup.EmotionScores): EmotionScore {
-    const sortedEmotions: string[] = Object.keys(emotionResult).sort((a: string, b: string) => emotionResult[a] - emotionResult[b]);
-    return emotionResult[sortedEmotions[0]];
+export function topEmotionScore(emotionScores: nlup.EmotionScores): Emotion {
+    const sortedEmotions: string[] = Object.keys(emotionScore).sort((a: string, b: string) => emotionScore[a] - emotionScores[b]);
+    return {
+        name: sortedEmotions[0],
+        score: emotionScores[sortedEmotions[0]]
+    }
 }
