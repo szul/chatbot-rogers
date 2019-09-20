@@ -1,3 +1,4 @@
-export interface EmotionScore {
-    [name: string]: number;
+export interface Emotion {
+    name: string;
+    score: number;
 }
