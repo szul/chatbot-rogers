@@ -1,5 +1,6 @@
 import { TurnContext, ActivityTypes, ConversationState } from "botbuilder";
 import { DialogSet, DialogContext, WaterfallDialog, WaterfallStepContext, TextPrompt } from "botbuilder-dialogs";
+import * as nlup from 'ibm-watson/natural-language-understanding/v1.js';
 import { topEmotionScore } from "./util";
 import { Emotion } from "./schema";
 
