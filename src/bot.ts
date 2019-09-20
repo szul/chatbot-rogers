@@ -22,8 +22,8 @@ export class RogersBot {
             if (context.activity.text === "help") {
                 await dialogContext.beginDialog("help");
             }
-            await context.sendActivity(`You said "${context.activity.text}"`);
         }
+        await this.state.saveChanges(context);
     }
     private addHelloDialogs(): void {
         this.dialogs.add(new WaterfallDialog("hello", [

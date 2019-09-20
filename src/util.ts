@@ -8,12 +8,12 @@ export function getEmotions(result: nlup.EntitiesResult | nlup.KeywordsResult): 
 }
 
 export function topEmotion(emotionScores: nlup.EmotionScores): string {
-    const sortedEmotions: string[] = Object.keys(emotionScores).sort((a: string, b: string) => emotionScores[a] - emotionScores[b]);
+    const sortedEmotions: string[] = Object.keys(emotionScores).sort((a: string, b: string) => emotionScores[b] - emotionScores[a]);
     return sortedEmotions[0];
 }
 
 export function topEmotionScore(emotionScores: nlup.EmotionScores): Emotion {
-    const sortedEmotions: string[] = Object.keys(emotionScore).sort((a: string, b: string) => emotionScore[a] - emotionScores[b]);
+    const sortedEmotions: string[] = Object.keys(emotionScores).sort((a: string, b: string) => emotionScores[b] - emotionScores[a]);
     return {
         name: sortedEmotions[0],
         score: emotionScores[sortedEmotions[0]]
