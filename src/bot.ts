@@ -29,13 +29,27 @@ export class RogersBot {
         }
         await this.state.saveChanges(context);
     }
-    private handleEmotion(emotionState: any): string {
-        const emotionScores: nlup.EmotionScores = emotionState;
-        const emotion: Emotion = topEmotionScore(emotionScores);
+    private handleEmotion(emotionState: nlup.EmotionScores): string {
+        const emotion: Emotion = topEmotionScore(emotionState);
         if(emotion.score === 0) {
             return "You seem uncertain. Why don't you tell me about how your morning started?";
         }
+        /*
+         * The switch/case could route to different concepts, categories, or entities depending on
+         * what other middleware is used. Also, you could route to different NLP apps to gather emotion/intent
+         * combinations.
+         */
         switch(emotion.name) {
+            case "anger":
+                break;
+            case "disgust":
+                break;
+            case "fear":
+                break;
+            case "joy":
+                break;
+            case "sadness":
+                break;
             default:
                 break;
         }

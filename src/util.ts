@@ -7,15 +7,41 @@ export function getEmotions(result: nlup.EntitiesResult | nlup.KeywordsResult): 
     }
 }
 
+export function rankEmotionKeys(emotionScores: nlup.EmotionScores): string[] {
+    return Object.keys(emotionScores).sort((a: string, b: string) => emotionScores[b] - emotionScores[a]);
+}
+
+export function rankEmotions(emotionScores: nlup.EmotionScores): nlup.EmotionScores {
+    const result: nlup.EmotionScores = { };
+    const rankedEmotions: string[] = rankEmotionKeys(emotionScores);
+    rankedEmotions.forEach((v: string): any => result[v] = emotionScores[v]);
+    return result;
+}
+
 export function topEmotion(emotionScores: nlup.EmotionScores): string {
-    const sortedEmotions: string[] = Object.keys(emotionScores).sort((a: string, b: string) => emotionScores[b] - emotionScores[a]);
-    return sortedEmotions[0];
+    const rankedEmotions: string[] = rankEmotionKeys(emotionScores);
+    return rankedEmotions[0];
 }
 
 export function topEmotionScore(emotionScores: nlup.EmotionScores): Emotion {
-    const sortedEmotions: string[] = Object.keys(emotionScores).sort((a: string, b: string) => emotionScores[b] - emotionScores[a]);
+    const rankedEmotions: string[] = rankEmotionKeys(emotionScores);
     return {
-        name: sortedEmotions[0],
-        score: emotionScores[sortedEmotions[0]]
+        name: rankedEmotions[0],
+        score: emotionScores[rankedEmotions[0]]
     }
+}
+
+export function calculateDifference(emotionScores: nlup.EmotionScores, firstEmotion?: string, secondEmotion?: string): number {
+    if(firstEmotion != null && secondEmotion == null || firstEmotion == null && secondEmotion != null) {
+        throw new Error("You must supply both the first and second emotion to calculate a difference between the two. Otherwise, supply neither to get the difference between the top two.");
+    }
+    if(firstEmotion == null && secondEmotion == null) {
+        const rankedEmotions: nlup.EmotionScores = rankEmotions(emotionScores);
+        return Math.abs(parseFloat(rankedEmotions[0]) - parseFloat(rankedEmotions[1]));
+    }
+    return Math.abs(parseFloat(emotionScores[firstEmotion]) - parseFloat(emotionScores[secondEmotion]));
+}
+
+export function calculateVariance(): number {
+    return 0;
 }
