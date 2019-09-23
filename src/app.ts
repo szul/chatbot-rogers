@@ -22,6 +22,10 @@ adapter.onTurnError = async (context: TurnContext, error: Error): Promise<void> 
     context.sendActivity("Sorry, an error has occurred.");
 };
 
+/*
+ * This pulls specifically from emotion detection, but you could using entity extraction as well,
+ * and pass the emotion scores to the emotion utility methods.
+ */
 adapter.use(new EmotionDetection(process.env.WATSON_API_KEY, process.env.WATSON_ENDPOINT));
 
 const conversationState: ConversationState = new ConversationState(new MemoryStorage());

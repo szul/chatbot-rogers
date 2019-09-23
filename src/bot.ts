@@ -1,7 +1,8 @@
 import { TurnContext, ActivityTypes, ConversationState } from "botbuilder";
 import { DialogSet, DialogContext, WaterfallDialog, WaterfallStepContext, TextPrompt, DialogTurnResult } from "botbuilder-dialogs";
 import * as nlup from 'ibm-watson/natural-language-understanding/v1.js';
-import { topEmotionScore } from "./util";
+import { topEmotionScore, calculateDifference } from "./emotion";
+import { getResponse } from "./util";
 import { Emotion, EXIT } from "./schema";
 
 export class RogersBot {
@@ -29,31 +30,24 @@ export class RogersBot {
         }
         await this.state.saveChanges(context);
     }
+    /*
+     * Hardcoded strings can be served via a JSON file, database, etc.
+     * Then the randomizer can be put into a function call.
+     */
     private handleEmotion(emotionState: nlup.EmotionScores): string {
         const emotion: Emotion = topEmotionScore(emotionState);
         if(emotion.score === 0) {
-            return "You seem uncertain. Why don't you tell me about how your morning started?";
+            return getResponse("none");
         }
-        /*
-         * The switch/case could route to different concepts, categories, or entities depending on
-         * what other middleware is used. Also, you could route to different NLP apps to gather emotion/intent
-         * combinations.
+        /* Sometimes, emotions are closely ranked. You can recognize this by calculating the difference
+         * between the two highest ranking scores.
+         * The calculateDifference() method can also accept secondary and tertiary parameters to specifically
+         * identify which emotion scores to calculate.
          */
-        switch(emotion.name) {
-            case "anger":
-                break;
-            case "disgust":
-                break;
-            case "fear":
-                break;
-            case "joy":
-                break;
-            case "sadness":
-                break;
-            default:
-                break;
+        if(calculateDifference(emotionState) < 0.3) {
+            getResponse("unsure");
         }
-        return null;
+        return getResponse(emotion.name);
     }
     private async loopDialog(step: WaterfallStepContext): Promise<DialogTurnResult> {
         if(step.result != null && EXIT.indexOf((<string>step.result).toLocaleLowerCase().trim()) !== -1) {

@@ -1,0 +1,311 @@
+[
+  {
+    "type": "conversationUpdate",
+    "membersAdded": [
+      {
+        "id": "48433320-de34-11e9-82fe-0d7c26ee6476",
+        "name": "Bot"
+      }
+    ],
+    "channelId": "emulator",
+    "conversation": {
+      "id": "4845cb30-de34-11e9-866f-a50f7bfcfac4|livechat"
+    },
+    "id": "4857f3a0-de34-11e9-866f-a50f7bfcfac4",
+    "localTimestamp": "2019-09-23T14:59:34-04:00",
+    "recipient": {
+      "id": "48433320-de34-11e9-82fe-0d7c26ee6476",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "timestamp": "2019-09-23T18:59:34.489Z",
+    "from": {
+      "id": "7605f405-e20b-4b28-9934-4a58b247e27b",
+      "name": "User"
+    },
+    "locale": "",
+    "serviceUrl": "http://localhost:57473"
+  },
+  {
+    "type": "conversationUpdate",
+    "membersAdded": [
+      {
+        "id": "7605f405-e20b-4b28-9934-4a58b247e27b",
+        "name": "User"
+      }
+    ],
+    "channelId": "emulator",
+    "conversation": {
+      "id": "4845cb30-de34-11e9-866f-a50f7bfcfac4|livechat"
+    },
+    "id": "485cd5a1-de34-11e9-866f-a50f7bfcfac4",
+    "localTimestamp": "2019-09-23T14:59:34-04:00",
+    "recipient": {
+      "id": "48433320-de34-11e9-82fe-0d7c26ee6476",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "timestamp": "2019-09-23T18:59:34.522Z",
+    "from": {
+      "id": "7605f405-e20b-4b28-9934-4a58b247e27b",
+      "name": "User"
+    },
+    "locale": "",
+    "serviceUrl": "http://localhost:57473"
+  },
+  {
+    "text": "hello",
+    "textFormat": "plain",
+    "type": "message",
+    "channelData": {
+      "clientActivityID": "1569265298583ijk9fe4y75a"
+    },
+    "channelId": "emulator",
+    "from": {
+      "id": "7605f405-e20b-4b28-9934-4a58b247e27b",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "",
+    "timestamp": "2019-09-23T19:01:38.588Z",
+    "conversation": {
+      "id": "4845cb30-de34-11e9-866f-a50f7bfcfac4|livechat"
+    },
+    "id": "924fcdc0-de34-11e9-866f-a50f7bfcfac4",
+    "localTimestamp": "2019-09-23T15:01:38-04:00",
+    "recipient": {
+      "id": "48433320-de34-11e9-82fe-0d7c26ee6476",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:57473"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:57473",
+    "channelId": "emulator",
+    "from": {
+      "id": "48433320-de34-11e9-82fe-0d7c26ee6476",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "4845cb30-de34-11e9-866f-a50f7bfcfac4|livechat"
+    },
+    "recipient": {
+      "id": "7605f405-e20b-4b28-9934-4a58b247e27b",
+      "role": "user"
+    },
+    "text": "Hello. How are you doing today?",
+    "inputHint": "expectingInput",
+    "replyToId": "924fcdc0-de34-11e9-866f-a50f7bfcfac4",
+    "id": "92d81090-de34-11e9-866f-a50f7bfcfac4",
+    "localTimestamp": "2019-09-23T15:01:39-04:00",
+    "timestamp": "2019-09-23T19:01:39.481Z",
+    "locale": ""
+  },
+  {
+    "text": "im okay feeling a little blah",
+    "textFormat": "plain",
+    "type": "message",
+    "channelData": {
+      "clientActivityID": "15692653080393bfrj5bc6vv"
+    },
+    "channelId": "emulator",
+    "from": {
+      "id": "7605f405-e20b-4b28-9934-4a58b247e27b",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "",
+    "timestamp": "2019-09-23T19:01:48.043Z",
+    "conversation": {
+      "id": "4845cb30-de34-11e9-866f-a50f7bfcfac4|livechat"
+    },
+    "id": "97f285b0-de34-11e9-866f-a50f7bfcfac4",
+    "localTimestamp": "2019-09-23T15:01:48-04:00",
+    "recipient": {
+      "id": "48433320-de34-11e9-82fe-0d7c26ee6476",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:57473"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:57473",
+    "channelId": "emulator",
+    "from": {
+      "id": "48433320-de34-11e9-82fe-0d7c26ee6476",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "4845cb30-de34-11e9-866f-a50f7bfcfac4|livechat"
+    },
+    "recipient": {
+      "id": "7605f405-e20b-4b28-9934-4a58b247e27b",
+      "role": "user"
+    },
+    "text": "Tell me about a time in your life where you've overcome such feelings?",
+    "inputHint": "expectingInput",
+    "replyToId": "97f285b0-de34-11e9-866f-a50f7bfcfac4",
+    "id": "98174bc0-de34-11e9-866f-a50f7bfcfac4",
+    "localTimestamp": "2019-09-23T15:01:48-04:00",
+    "timestamp": "2019-09-23T19:01:48.284Z",
+    "locale": ""
+  },
+  {
+    "text": "Wow. That's pretty deep. I can't really remember. Sometimes when I'm feeling sluggish, I like to go watch a baseball game.",
+    "textFormat": "plain",
+    "type": "message",
+    "channelData": {
+      "clientActivityID": "1569265357551wmw84kdlobs"
+    },
+    "channelId": "emulator",
+    "from": {
+      "id": "7605f405-e20b-4b28-9934-4a58b247e27b",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "",
+    "timestamp": "2019-09-23T19:02:37.555Z",
+    "conversation": {
+      "id": "4845cb30-de34-11e9-866f-a50f7bfcfac4|livechat"
+    },
+    "id": "b5757430-de34-11e9-866f-a50f7bfcfac4",
+    "localTimestamp": "2019-09-23T15:02:37-04:00",
+    "recipient": {
+      "id": "48433320-de34-11e9-82fe-0d7c26ee6476",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:57473"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:57473",
+    "channelId": "emulator",
+    "from": {
+      "id": "48433320-de34-11e9-82fe-0d7c26ee6476",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "4845cb30-de34-11e9-866f-a50f7bfcfac4|livechat"
+    },
+    "recipient": {
+      "id": "7605f405-e20b-4b28-9934-4a58b247e27b",
+      "role": "user"
+    },
+    "text": "Has such sadness ever been beneficial to you in the past?",
+    "inputHint": "expectingInput",
+    "replyToId": "b5757430-de34-11e9-866f-a50f7bfcfac4",
+    "id": "b5913990-de34-11e9-866f-a50f7bfcfac4",
+    "localTimestamp": "2019-09-23T15:02:37-04:00",
+    "timestamp": "2019-09-23T19:02:37.737Z",
+    "locale": ""
+  },
+  {
+    "text": "Sure. It helps me overcome things.",
+    "textFormat": "plain",
+    "type": "message",
+    "channelData": {
+      "clientActivityID": "1569265372087p0340dzpga"
+    },
+    "channelId": "emulator",
+    "from": {
+      "id": "7605f405-e20b-4b28-9934-4a58b247e27b",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "",
+    "timestamp": "2019-09-23T19:02:52.092Z",
+    "conversation": {
+      "id": "4845cb30-de34-11e9-866f-a50f7bfcfac4|livechat"
+    },
+    "id": "be1f9fc0-de34-11e9-866f-a50f7bfcfac4",
+    "localTimestamp": "2019-09-23T15:02:52-04:00",
+    "recipient": {
+      "id": "48433320-de34-11e9-82fe-0d7c26ee6476",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:57473"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:57473",
+    "channelId": "emulator",
+    "from": {
+      "id": "48433320-de34-11e9-82fe-0d7c26ee6476",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "4845cb30-de34-11e9-866f-a50f7bfcfac4|livechat"
+    },
+    "recipient": {
+      "id": "7605f405-e20b-4b28-9934-4a58b247e27b",
+      "role": "user"
+    },
+    "text": "Tell me about a time when you weren't afraid of this.",
+    "inputHint": "expectingInput",
+    "replyToId": "be1f9fc0-de34-11e9-866f-a50f7bfcfac4",
+    "id": "be394240-de34-11e9-866f-a50f7bfcfac4",
+    "localTimestamp": "2019-09-23T15:02:52-04:00",
+    "timestamp": "2019-09-23T19:02:52.260Z",
+    "locale": ""
+  },
+  {
+    "text": "Of overcoming things? When I was younger, I used to be such a daredevil. It was fun.",
+    "textFormat": "plain",
+    "type": "message",
+    "channelData": {
+      "clientActivityID": "1569265416214hc5tnitxfr"
+    },
+    "channelId": "emulator",
+    "from": {
+      "id": "7605f405-e20b-4b28-9934-4a58b247e27b",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "",
+    "timestamp": "2019-09-23T19:03:36.220Z",
+    "conversation": {
+      "id": "4845cb30-de34-11e9-866f-a50f7bfcfac4|livechat"
+    },
+    "id": "d86d05c0-de34-11e9-866f-a50f7bfcfac4",
+    "localTimestamp": "2019-09-23T15:03:36-04:00",
+    "recipient": {
+      "id": "48433320-de34-11e9-82fe-0d7c26ee6476",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:57473"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:57473",
+    "channelId": "emulator",
+    "from": {
+      "id": "48433320-de34-11e9-82fe-0d7c26ee6476",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "4845cb30-de34-11e9-866f-a50f7bfcfac4|livechat"
+    },
+    "recipient": {
+      "id": "7605f405-e20b-4b28-9934-4a58b247e27b",
+      "role": "user"
+    },
+    "text": "This is good news. Tell me more about the things that make you happy.",
+    "inputHint": "expectingInput",
+    "replyToId": "d86d05c0-de34-11e9-866f-a50f7bfcfac4",
+    "id": "d88a78d0-de34-11e9-866f-a50f7bfcfac4",
+    "localTimestamp": "2019-09-23T15:03:36-04:00",
+    "timestamp": "2019-09-23T19:03:36.413Z",
+    "locale": ""
+  }
+]
