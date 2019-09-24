@@ -11,7 +11,12 @@ This bot uses the `EmotionDetection` middleware exclusively, which only lets you
 ## Installation
 
     git clone https://github.com/szul/chatbot-rogers
-    cd chatbot-rogers
+
+## Pick an Example
+
+Currently, there is one folder for emotion detection of the entire document/text/message of the user, but more will be added (e.g., entity extraction with emotion detection).
+
+    cd chatbot-rogers/emotion-detection
     npm install
 
 ## Services
@@ -28,6 +33,10 @@ Navigate to the root of the chatbot application in a command prompt and type:
     node server.js
 
 You can then use the Bot Framework Emulator to open the URL and interact with the bot.
+
+> If you want to use the `launch.json` in the `.vscode` directory to debug this bot and step through it, put the `.env` in the root of the "chatbot-rogers" directory or add the `envFile` property to the launch configuration and point it to your `.env` file.
+
+## Example Transcript
 
 <div style="text-align: center;">
 
