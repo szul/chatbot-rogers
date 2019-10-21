@@ -45,7 +45,7 @@ export class RogersBot {
          * identify which emotion scores to calculate.
          */
         if(calculateDifference(emotionState) < 0.3) {
-            getResponse("unsure");
+            return getResponse("unsure");
         }
         return getResponse(emotion.name);
     }
